@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+- **The sign-in page could be used to send a visitor off-site or run script in the app.** A crafted `/login?from=...` link could redirect a signed-in visitor to another origin, or run script in the app through a `javascript:` target. The page now follows `from` only when it is a path inside the app. (by the FreeFrame team)
+
 ### Fixed
 - **Project settings keep a chosen poster and unsaved edits while open.** Choosing a poster used to flash the preview and then drop it on return from the file picker, so Save uploaded nothing; name and description edits were lost the same way. Reopening the dialog now starts from the saved project. (#465, #512 by @jay23606)
 - **The notification drawer no longer covers an expanded sidebar.** (#513 by @jay23606)
